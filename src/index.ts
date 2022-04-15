@@ -1,3 +1,3 @@
-export function test() {
-  return 'test';
+export function testFunc(doesItWork: boolean): string {
+  return doesItWork ? 'test' : 'not test';
 }
