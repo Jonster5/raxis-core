@@ -449,3 +449,10 @@ it('should return a rounded vector', () => {
     expect(v2.x).toBe(1);
     expect(v2.y).toBe(2);
 });
+
+it('should freeze the vector', () => {
+    const v1 = new Vec2(1, 2);
+    expect(Object.isFrozen(v1)).toBe(false);
+    v1.freeze();
+    expect(Object.isFrozen(v1)).toBe(true);
+});

@@ -266,7 +266,7 @@ export class Vec2 {
         return new Vec2(this.x, this.y);
     }
 
-    toArray(): number[] {
+    toArray(): [number, number] {
         return [this.x, this.y];
     }
 
@@ -457,5 +457,11 @@ export class Vec2 {
 
     static map(v: Vec2, fn: (v: number) => number): Vec2 {
         return new Vec2(fn(v.x), fn(v.y));
+    }
+
+    freeze(): Vec2 {
+        Object.freeze(this);
+
+        return this;
     }
 }
