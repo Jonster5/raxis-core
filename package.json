@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jonster5/raxis-core.git"
+        "url": "git+https://github.com/TCFGames/raxis-core.git"
     },
     "keywords": [
         "raxis",
@@ -28,9 +28,9 @@
     "author": "Jonster5",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jonster5/raxis-core/issues"
+        "url": "https://github.com/TCFGames/raxis-core/issues"
     },
-    "homepage": "https://github.com/jonster5/raxis-core#readme",
+    "homepage": "https://github.com/TCFGames/raxis-core#readme",
     "devDependencies": {
         "@types/jest": "27.4.0",
         "@typescript-eslint/eslint-plugin": "5.10.2",

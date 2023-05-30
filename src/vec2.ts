@@ -63,69 +63,69 @@ export class Vec2 {
         return new Vec2(a.x + s, a.y + s);
     }
 
-    subtract(v: Vec2): Vec2 {
+    sub(v: Vec2): Vec2 {
         this.x -= v.x;
         this.y -= v.y;
 
         return this;
     }
 
-    subtractScalar(s: number): Vec2 {
+    subScalar(s: number): Vec2 {
         this.x -= s;
         this.y -= s;
 
         return this;
     }
 
-    static subtract(a: Vec2, b: Vec2): Vec2 {
+    static sub(a: Vec2, b: Vec2): Vec2 {
         return new Vec2(a.x - b.x, a.y - b.y);
     }
 
-    static subtractScalar(a: Vec2, s: number): Vec2 {
+    static subScalar(a: Vec2, s: number): Vec2 {
         return new Vec2(a.x - s, a.y - s);
     }
 
-    multiply(v: Vec2): Vec2 {
+    mul(v: Vec2): Vec2 {
         this.x *= v.x;
         this.y *= v.y;
 
         return this;
     }
 
-    multiplyScalar(s: number): Vec2 {
+    mulScalar(s: number): Vec2 {
         this.x *= s;
         this.y *= s;
 
         return this;
     }
 
-    static multiply(a: Vec2, b: Vec2): Vec2 {
+    static mul(a: Vec2, b: Vec2): Vec2 {
         return new Vec2(a.x * b.x, a.y * b.y);
     }
 
-    static multiplyScalar(a: Vec2, s: number): Vec2 {
+    static mulScalar(a: Vec2, s: number): Vec2 {
         return new Vec2(a.x * s, a.y * s);
     }
 
-    divide(v: Vec2): Vec2 {
+    div(v: Vec2): Vec2 {
         this.x /= v.x;
         this.y /= v.y;
 
         return this;
     }
 
-    divideScalar(s: number): Vec2 {
+    divScalar(s: number): Vec2 {
         this.x /= s;
         this.y /= s;
 
         return this;
     }
 
-    static divide(a: Vec2, b: Vec2): Vec2 {
+    static div(a: Vec2, b: Vec2): Vec2 {
         return new Vec2(a.x / b.x, a.y / b.y);
     }
 
-    static divideScalar(a: Vec2, s: number): Vec2 {
+    static divScalar(a: Vec2, s: number): Vec2 {
         return new Vec2(a.x / s, a.y / s);
     }
 
@@ -150,7 +150,7 @@ export class Vec2 {
     }
 
     normalize(): Vec2 {
-        const m = this.magnitude();
+        const m = this.mag();
 
         if (m > 0) {
             this.x /= m;
@@ -161,7 +161,7 @@ export class Vec2 {
     }
 
     static normalize(v: Vec2): Vec2 {
-        const m = v.magnitude();
+        const m = v.mag();
 
         if (m > 0) {
             return new Vec2(v.x / m, v.y / m);
@@ -179,7 +179,7 @@ export class Vec2 {
     }
 
     setAngle(angle: number): Vec2 {
-        const m = this.magnitude();
+        const m = this.mag();
 
         this.x = m * Math.cos(angle);
         this.y = m * Math.sin(angle);
@@ -187,16 +187,16 @@ export class Vec2 {
         return this;
     }
 
-    magnitude(): number {
+    mag(): number {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
-    magnitudeSq(): number {
+    magSq(): number {
         return this.x * this.x + this.y * this.y;
     }
 
-    setMagnitude(m: number): Vec2 {
-        const m2 = this.magnitude();
+    setMag(m: number): Vec2 {
+        const m2 = this.mag();
 
         if (m2 > 0) {
             this.x *= m / m2;
@@ -248,7 +248,7 @@ export class Vec2 {
         return this;
     }
 
-    randomize(): Vec2 {
+    random(): Vec2 {
         this.x = Math.random() * 2 - 1;
         this.y = Math.random() * 2 - 1;
 
@@ -311,20 +311,20 @@ export class Vec2 {
         );
     }
 
-    clampMagnitude(min: number, max: number): Vec2 {
-        const m = this.magnitude();
+    clampMag(min: number, max: number): Vec2 {
+        const m = this.mag();
 
         if (m > max) {
-            this.setMagnitude(max);
+            this.setMag(max);
         } else if (m < min) {
-            this.setMagnitude(min);
+            this.setMag(min);
         }
 
         return this;
     }
 
-    static clampMagnitude(v: Vec2, min: number, max: number): Vec2 {
-        const m = v.magnitude();
+    static clampMag(v: Vec2, min: number, max: number): Vec2 {
+        const m = v.mag();
 
         if (m > max) {
             return new Vec2((v.x * max) / m, (v.y * max) / m);
